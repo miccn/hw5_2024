@@ -2,12 +2,23 @@
 Start: 25px, 0% opacity
 End: 475px, 100% opacity
 5 seconds, only when page is loaded */
-/* @keyframes animationname {
-    keyframes-selector {css-styles;}
-} */
+@keyframes logoAnimation {
+    from {
+        width: 25px;
+        opacity: 0%
+    }
+    to {
+        width: 475px;
+        opacity: 100%;
+    }
+  }
+header > img{
+    margin: auto;
+    animation: logoAnimation 5s ease forwards;
+}
+  /* Body uses Poppins font, with serif as a backup. */
+  /* Background of body should be "concrete_seamless.png", backup color #f1f1f1 */
 
-/* Body uses Poppins font, with serif as a backup. */
-/* Background of body should be "concrete_seamless.png", backup color #f1f1f1 */
 body{
     font-family: "Poppins", serif;
     background-color: #f1f1f1;
