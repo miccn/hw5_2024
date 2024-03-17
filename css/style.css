@@ -44,9 +44,47 @@ solid 2px border using #45ADAD,
     padding: 20px 0px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    justify-content: center;
+    align-content: center;
 }
 
+
+/* Edit the css for the card class to match our example. 
+Achieve this by using a flex-property to specify an 
+initial “size” of 450px. */
+
+
 .card {
+    display: flex;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    flex-basis: 450px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+/* Edit the css for the pricing class to match 
+our example. You should use flex and the cards 
+should be centered both horizontally and vertically. */
+.pricing{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the images in the gallery class. 
+These elements will have a solid 10px border 
+with a color of #50C7C7, 10px margin on all 
+four sides and a width of 300px.*/
+.gallery > *{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Edit the css for the gallery class to use flex 
+to match the example.  */
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
