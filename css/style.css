@@ -41,7 +41,6 @@ Do not modify the list items or the links - modify the nav_links class to use fl
 
 /* Style the links so that they have the same color even after they have been visited. */
 .nav_links a:visited {
-    text-decoration: none;
     color: blue;
   }
 
