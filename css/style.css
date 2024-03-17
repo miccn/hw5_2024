@@ -40,9 +40,10 @@ Do not modify the list items or the links - modify the nav_links class to use fl
 }
 
 /* Style the links so that they have the same color even after they have been visited. */
-a:visited{
+.nav_links a:visited {
     text-decoration: none;
-}
+    color: blue;
+  }
 
 /* 
 style ONLY those header elements that are direct children of a card class.  
@@ -105,6 +106,11 @@ to match the example.  */
 
 /* Media query for devices with a width greater than 900px */
 @media (min-width: 900px) {
+    /* Edit the css for the header tag (all instances) and 
+    the nav_links class to match our example using flex-properties. 
+    The logo should be as far to the left as possible and the links 
+    as far to the right as possible. Use flex properties, 
+    NOT position properties. */
     header{
         align-items: center;
         flex-direction: row;
@@ -113,6 +119,9 @@ to match the example.  */
     .nav_links{
         flex-direction: row;
     }
+    /* Edit the css for the pricing and card classes 
+    to match our example. Part of achieving this is 
+    by using a flex-property to specify a “size” of 275px. */
     .pricing{
         flex-direction: row;
         justify-content: center;
@@ -121,6 +130,9 @@ to match the example.  */
     .card{
         flex-basis: 275px;
     }
+    /* Modify the first header (the one not inside main) so 
+    that it remains visible at the top of the screen even 
+    as we scroll down. Make sure that it is always visible.*/
     body > header{
         position: sticky;
         top: 0;
@@ -129,16 +141,24 @@ to match the example.  */
 }
 
 @media (prefers-reduced-motion: reduce) {
+    /* The logo should appear but not be animated if 
+    prefers-reduced-motion is selected in the 
+    accessibility preferences. */
     header > img{
         animation: none;
     }
   }
 
 @media print{
+    /* Change the font on your body to Arial with a 
+    backup value of  Helvetica 
+    The background image should be removed. */
     body{
         font-family: Arial, Helvetica;
         background-image: none;
     }
+    /* Edit the nav/nav_links elements so that they are 
+    spaced according to the image above. */
     nav{
         width: 100%;
     }
@@ -147,6 +167,8 @@ to match the example.  */
         justify-content: space-around;
         flex-wrap: nowrap;
     }
+    /* The card elements should have a solid border 2px of #45ADDD 
+    and use flex-basis of 325px. */
     .card{
         border: solid 2px #45ADDD;
         flex-basis: 325px;
@@ -154,16 +176,21 @@ to match the example.  */
     .card > header {
         background: #288088;
     }
+    /* Edit the pricing class so that the elements align along the bottom. 
+     As long as it aligns along the bottom we don't care if the cards 
+     aren't the same height. */
     .pricing{
         flex-direction: row;
         justify-content: center;
         align-items: flex-end;
     }
+    /* No part of the gallery should be visible. */
     #gallery, .gallery{
         display: none;
         margin: 0px;
         padding-top: 500px;
     }
+    /* Without using list-style-type add the thumbs up entity as shown in the cards. */
     .card li:nth-child(2)::after {
         content: "👍";
       }
